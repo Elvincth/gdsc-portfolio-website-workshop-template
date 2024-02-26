@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
+    // The grid layout is a 12-column grid, with a gap of 9 between columns and rows.
     <div className="grid grid-cols-12 lg:gap-x-9 gap-y-9">
+      {/*  The lg:col-span-7 class applies to the element when the scree size is large or greater. */}
+      {/*  It defaults to 12 columns on smaller screens. */}
       <div className="lg:col-span-7 col-span-12">
         <h1 className="text-4xl mt-6 font-bold tracking-tight text-zinc-800 sm:text-5xl">
           I’m John Doe, a full-stack developer and tech enthusiast based in Hong
