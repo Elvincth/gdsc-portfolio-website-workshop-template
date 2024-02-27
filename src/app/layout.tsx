@@ -1,4 +1,5 @@
 // import type { Metadata } from "next";
+import { Header } from "@/components/Header";
 
 import "@/styles/tailwind.css";
 
@@ -10,7 +11,6 @@ import "@/styles/tailwind.css";
 //   description:
 //     "Explore John Doe's portfolio created during the portfolio workshop.",
 // };
-//See: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
 
 //Here is the root layout which shared across all pages
 //This layout includes the header and the main content
@@ -21,13 +21,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      {/*  Add bg-white to the body to make the background white */}
+      <body className="bg-white">
         {/*  This is the favicon using an SVG */}
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>"
         />
-        {children}
+        <Header />
+        {/*The container is to keep the content centered and with a max-width in larger screens the content won't be too wide */}
+        {/* The min-h-screen is to make sure the content is at least the height of the screen */}
+        {/* px-4 sm:px-10 is to add padding to the sides of the container , in sm or larger screens the padding will be 10 */}
+        {/* py-24 is to add padding to the top and bottom of the container */}
+        {/* The <main> </main> is a reserved HTML tag used to define the main content of the page */}
+        <main className="container min-h-screen px-4 sm:px-10 py-24">
+          {children}
+        </main>
       </body>
     </html>
   );
