@@ -20,15 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white">
+      <body>
         {/*  This is the favicon using an SVG */}
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>"
         />
-        <main className="container min-h-screen px-4 sm:px-10 py-24">
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );
